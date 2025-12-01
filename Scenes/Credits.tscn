@@ -28,7 +28,7 @@ offset_right = 1920.0
 offset_bottom = 4187.0
 theme_override_fonts/font = ExtResource("2_xbebw")
 theme_override_font_sizes/font_size = 40
-text = "Money Counter by MP
+text = "Money Counter made by quenkono11 using the Godot Engine, both under MIT license
     
 
 
@@ -36,7 +36,7 @@ text = "Money Counter by MP
 
 
 Coding
-MP
+quenkono11
 
 
 
@@ -45,12 +45,19 @@ Godot Logo by Kenney
 
 
 Credits Designer
-MP
+quenkono11
+
+
+UI/UX Designer
+quenkono11
 
 
 Quality Assurance
-MP
+quenkono11
 
+
+Font
+Victor Mono
 
 
 
@@ -77,7 +84,7 @@ https://www.youtube.com/watch?v=QKAuacUG0y4
 
 
 
-Legal data is stored in the Licenses folder"
+Source code available at github.com/quenkono11/Money-Counter"
 horizontal_alignment = 1
 autowrap_mode = 3
 
