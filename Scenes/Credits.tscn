@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://6upqg00xkfy2"]
+
+[ext_resource type="Script" uid="uid://m677f4yheeqq" path="res://Scripts/Credits.gd" id="1_rirmc"]
+[ext_resource type="FontFile" uid="uid://2nxmcapy1hyn" path="res://Assets/Victor Mono/VictorMono-Bold.otf" id="2_xbebw"]
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("creditsText")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rirmc")
+creditsText = NodePath("Label")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4944.0
+offset_top = -2560.0
+offset_right = 5056.0
+offset_bottom = 2440.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 1464.0
+offset_right = 1920.0
+offset_bottom = 4187.0
+theme_override_fonts/font = ExtResource("2_xbebw")
+theme_override_font_sizes/font_size = 40
+text = "Money Counter by MP
+    
+
+
+
+
+
+Coding
+MP
+
+
+
+Godot Logo by Kenney
+
+
+
+Credits Designer
+MP
+
+
+Quality Assurance
+MP
+
+
+
+
+Made with
+Godot Engine
+
+Special Thanks
+Godotneers
+StayAtHomeDev
+
+
+Links to people
+Kenney
+https://www.kenney.nl
+Godotneers 
+https://www.youtube.com/@godotneers
+Save and Load Video
+https://www.youtube.com/watch?v=43BZsLZheA4
+StayAtHomeDev
+https://www.youtube.com/@stayathomedev
+SplashScreen Videos
+https://www.youtube.com/watch?v=xy-ssYTQ3as
+https://www.youtube.com/watch?v=QKAuacUG0y4
+
+
+
+Legal data is stored in the Licenses folder"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

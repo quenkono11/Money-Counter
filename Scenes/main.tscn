@@ -1,0 +1,531 @@
+[gd_scene load_steps=19 format=3 uid="uid://b17l6tm6siqjy"]
+
+[ext_resource type="Script" uid="uid://cihbfs0fq7rvq" path="res://Scripts/main.gd" id="1_b5vh0"]
+[ext_resource type="Script" uid="uid://blxigq53a8r0p" path="res://Scripts/1 Cent.gd" id="2_crpr2"]
+[ext_resource type="FontFile" uid="uid://bbq1lhcao2rgf" path="res://Assets/Victor Mono/VictorMono-BoldItalic.otf" id="2_k12tt"]
+[ext_resource type="Script" uid="uid://samxq8eqhnrd" path="res://Scripts/2 Cent.gd" id="3_xkd0y"]
+[ext_resource type="FontFile" uid="uid://2nxmcapy1hyn" path="res://Assets/Victor Mono/VictorMono-Bold.otf" id="4_h1bgf"]
+[ext_resource type="Script" uid="uid://b6iog5hb5kiqu" path="res://Scripts/5 Cent.gd" id="4_ijd3b"]
+[ext_resource type="Script" uid="uid://cryjwrimqwpf" path="res://Scripts/10 Cent.gd" id="5_e8c3u"]
+[ext_resource type="Script" uid="uid://d16450xavpvj1" path="res://Scripts/20 Cent.gd" id="6_ce5da"]
+[ext_resource type="Script" uid="uid://bxgvwp8o731o2" path="res://Scripts/50 Cent.gd" id="7_kskj2"]
+[ext_resource type="Script" uid="uid://cnj1ww0hwot12" path="res://Scripts/1 Euro.gd" id="8_lfqdu"]
+[ext_resource type="Script" uid="uid://85wsfmvh8jxw" path="res://Scripts/2 Euro.gd" id="9_se6yq"]
+[ext_resource type="Script" uid="uid://cqhwvbr4u0b1u" path="res://Scripts/5 Euro.gd" id="10_g4xl0"]
+[ext_resource type="Script" uid="uid://dirjw5r580bn2" path="res://Scripts/10 Euro.gd" id="11_7gyvv"]
+[ext_resource type="Script" uid="uid://b24kgvex37tw8" path="res://Scripts/20 Euro.gd" id="12_n4dcf"]
+[ext_resource type="Script" uid="uid://d0a2ruvx7d2rg" path="res://Scripts/50 Euro.gd" id="13_w2acc"]
+[ext_resource type="Script" uid="uid://d8e85lbo2jyx" path="res://Scripts/100 Euro.gd" id="14_sgr6l"]
+[ext_resource type="FontFile" uid="uid://bufbgr3nmb4f" path="res://Assets/Victor Mono/VictorMono-Medium.otf" id="15_wsu2k"]
+[ext_resource type="Script" uid="uid://bjltafwh1b7i2" path="res://Scripts/entering_of_coins.gd" id="17_b3802"]
+
+[node name="Main" type="Node2D"]
+z_index = -8
+script = ExtResource("1_b5vh0")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = -5
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 920.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0282809, 0.305646, 0.429254, 1)
+
+[node name="Menu" type="HBoxContainer" parent="Control"]
+z_index = 3
+layout_mode = 0
+offset_right = 1208.0
+offset_bottom = 122.0
+theme_override_constants/separation = 80
+
+[node name="Mode Button" type="Button" parent="Control/Menu"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 41
+text = "Settings"
+
+[node name="Save Button" type="Button" parent="Control/Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 41
+text = "Save"
+
+[node name="Load Button" type="Button" parent="Control/Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 41
+text = "Load"
+
+[node name="Credits Button" type="Button" parent="Control/Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 41
+text = "Credits"
+
+[node name="Exit Button" type="Button" parent="Control/Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 41
+text = "Exit"
+
+[node name="Cents" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 145.0
+offset_right = 1095.0
+offset_bottom = 640.0
+theme_override_constants/separation = 15
+
+[node name="1 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("2_crpr2")
+
+[node name="Title" type="Label" parent="Control/Cents/1 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "1 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/1 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/1 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/1 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="2 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("3_xkd0y")
+
+[node name="Title" type="Label" parent="Control/Cents/2 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "2 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/2 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/2 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/2 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="5 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("4_ijd3b")
+
+[node name="Title" type="Label" parent="Control/Cents/5 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "5 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/5 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/5 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/5 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="10 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("5_e8c3u")
+
+[node name="Title" type="Label" parent="Control/Cents/10 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "10 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/10 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/10 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/10 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="20 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("6_ce5da")
+
+[node name="Title" type="Label" parent="Control/Cents/20 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "20 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/20 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/20 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/20 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="50 Cent" type="VBoxContainer" parent="Control/Cents"]
+layout_mode = 2
+script = ExtResource("7_kskj2")
+
+[node name="Title" type="Label" parent="Control/Cents/50 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "50 Cent"
+
+[node name="Plus Button" type="Button" parent="Control/Cents/50 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Cents/50 Cent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Cents/50 Cent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="Euro" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 590.0
+offset_right = 1321.0
+offset_bottom = 1085.0
+theme_override_constants/separation = 15
+
+[node name="1 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("8_lfqdu")
+
+[node name="Title" type="Label" parent="Control/Euro/1 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "1 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/1 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/1 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/1 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="2 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("9_se6yq")
+
+[node name="Title" type="Label" parent="Control/Euro/2 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "2 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/2 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/2 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/2 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="5 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("10_g4xl0")
+
+[node name="Title" type="Label" parent="Control/Euro/5 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "5 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/5 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/5 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/5 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="10 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("11_7gyvv")
+
+[node name="Title" type="Label" parent="Control/Euro/10 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "10 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/10 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/10 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/10 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="20 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("12_n4dcf")
+
+[node name="Title" type="Label" parent="Control/Euro/20 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "20 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/20 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/20 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/20 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="50 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("13_w2acc")
+
+[node name="Title" type="Label" parent="Control/Euro/50 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "50 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/50 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/50 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/50 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="100 Euro" type="VBoxContainer" parent="Control/Euro"]
+layout_mode = 2
+script = ExtResource("14_sgr6l")
+
+[node name="Title" type="Label" parent="Control/Euro/100 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 50
+text = "100 Euro"
+
+[node name="Plus Button" type="Button" parent="Control/Euro/100 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Amount" type="Button" parent="Control/Euro/100 Euro"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h1bgf")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Minus Button" type="Button" parent="Control/Euro/100 Euro"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "-"
+
+[node name="Entering of coins" type="VBoxContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -65
+script = ExtResource("17_b3802")
+
+[node name="Fast entering of coins" type="LineEdit" parent="Control/Entering of coins"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("15_wsu2k")
+theme_override_font_sizes/font_size = 80
+placeholder_text = "Please enter the desired amount of money."
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Control/Entering of coins"]
+layout_mode = 2
+
+[node name="Confirm Button" type="Button" parent="Control/Entering of coins/HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 75
+text = "Confirm Amount Changes"
+
+[node name="Decline Button" type="Button" parent="Control/Entering of coins/HSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 75
+text = "Decline Amount Changes"
+
+[node name="Total Money" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -513.0
+offset_bottom = 130.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_k12tt")
+theme_override_font_sizes/font_size = 52
+text = "Total Money: "
+autowrap_mode = 3
+
+[connection signal="pressed" from="Control/Menu/Save Button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Control/Menu/Load Button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="Control/Menu/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/Menu/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/Cents/1 Cent/Plus Button" to="Control/Cents/1 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/1 Cent/Amount" to="Control/Cents/1 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/1 Cent/Minus Button" to="Control/Cents/1 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/2 Cent/Plus Button" to="Control/Cents/2 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/2 Cent/Amount" to="Control/Cents/2 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/2 Cent/Minus Button" to="Control/Cents/2 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/5 Cent/Plus Button" to="Control/Cents/5 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/5 Cent/Amount" to="Control/Cents/5 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/5 Cent/Minus Button" to="Control/Cents/5 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/10 Cent/Plus Button" to="Control/Cents/10 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/10 Cent/Amount" to="Control/Cents/10 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/10 Cent/Minus Button" to="Control/Cents/10 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/20 Cent/Plus Button" to="Control/Cents/20 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/20 Cent/Amount" to="Control/Cents/20 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/20 Cent/Minus Button" to="Control/Cents/20 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/50 Cent/Plus Button" to="Control/Cents/50 Cent" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Cents/50 Cent/Amount" to="Control/Cents/50 Cent" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Cents/50 Cent/Minus Button" to="Control/Cents/50 Cent" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/1 Euro/Plus Button" to="Control/Euro/1 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/1 Euro/Amount" to="Control/Euro/1 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/1 Euro/Minus Button" to="Control/Euro/1 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/2 Euro/Plus Button" to="Control/Euro/2 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/2 Euro/Amount" to="Control/Euro/2 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/2 Euro/Minus Button" to="Control/Euro/2 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/5 Euro/Plus Button" to="Control/Euro/5 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/5 Euro/Amount" to="Control/Euro/5 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/5 Euro/Minus Button" to="Control/Euro/5 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/10 Euro/Plus Button" to="Control/Euro/10 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/10 Euro/Amount" to="Control/Euro/10 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/10 Euro/Minus Button" to="Control/Euro/10 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/20 Euro/Plus Button" to="Control/Euro/20 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/20 Euro/Amount" to="Control/Euro/20 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/20 Euro/Minus Button" to="Control/Euro/20 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/50 Euro/Plus Button" to="Control/Euro/50 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/50 Euro/Amount" to="Control/Euro/50 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/50 Euro/Minus Button" to="Control/Euro/50 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/100 Euro/Plus Button" to="Control/Euro/100 Euro" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="Control/Euro/100 Euro/Amount" to="Control/Euro/100 Euro" method="_on_amount_pressed"]
+[connection signal="pressed" from="Control/Euro/100 Euro/Minus Button" to="Control/Euro/100 Euro" method="_on_minus_button_pressed"]
+[connection signal="pressed" from="Control/Entering of coins/HSplitContainer/Confirm Button" to="Control/Entering of coins" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Control/Entering of coins/HSplitContainer/Decline Button" to="Control/Entering of coins" method="_on_decline_button_pressed"]
